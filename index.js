@@ -10,7 +10,7 @@ const tree = buildTree(); // Emoticon prefix tree.
 /**
  * Greedily replace emoticons with emoji symbols, using `tree` to aid lookup.
  */
-function replaceEmoticons(text, boundary = /\s/) {
+function replaceEmoticons(text, boundary = /\s/, padSpaceAfter = false) {
   let active = true;
   let matches = [];
   text = Array.from(text);
@@ -47,7 +47,7 @@ function replaceEmoticons(text, boundary = /\s/) {
   }
 
   for(let m of matches.reverse()) {
-    text.splice(m[0], m[1] - m[0], m[2]);
+    text.splice(m[0], m[1] - m[0], m[2] + (padSpaceAfter ? ' ' : ''));
   }
   return text.join('');
 }
