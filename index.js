@@ -13,9 +13,11 @@ const tree = buildTree(); // Emoticon prefix tree.
 function replaceEmoticons(text, boundary = /\s/) {
   let active = true;
   let matches = [];
+  text = Array.from(text);
 
   for (let i = 0; i < text.length; i++) {
     let c = text[i];
+    // console.debug(`prefix=${text.slice(0,i)}, c=${c}, active=${active}`);
 
     if(c.match(boundary)) {
       active = true;
@@ -44,7 +46,6 @@ function replaceEmoticons(text, boundary = /\s/) {
     active = false;
   }
 
-  text = Array.from(text);
   for(let m of matches.reverse()) {
     text.splice(m[0], m[1] - m[0], m[2]);
   }
