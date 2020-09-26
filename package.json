@@ -1,6 +1,6 @@
 {
   "name": "emoticon-to-emoji",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Replaces emoticon character sequences with UTF-8 emojis",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,10 @@
     "url": "https://github.com/sgpinkus/emoticon-to-emoji/"
   },
   "homepage": "https://github.com/sgpinkus/emoticon-to-emoji/",
-  "keywords": ["emoticon", "emoji"],
+  "keywords": [
+    "emoticon",
+    "emoji"
+  ],
   "dependencies": {
     "emoticon": "^3.2.0"
   },
