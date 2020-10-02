@@ -1,6 +1,7 @@
-const assert = require('assert');
 const { expect } = require('chai');
 const { replaceEmoticons } = require('./index');
+
+/* eslint-disable no-console */
 
 const test = [
   ['=\',-[=\',-[ :+[:) :):);) `:)`.', '😭😭 :+[:) 😃😃😉 `:)`.'],
