@@ -1,11 +1,9 @@
 const emoticon = require('emoticon');
 
-
 const emoticons = Object.fromEntries(emoticon // Flat hash of emoticon -> emoji.
     .map(spec => spec.emoticons.map(code => [code, spec.emoji])).flat()
     .sort((a, b) => a[0].length > b[0].length ? 1 : a[0].length === b[0].length ? 0 : -1));
 const tree = buildTree(); // Emoticon prefix tree. TODO: stash this on build.
-
 
 /**
  * Greedily replace emoticons with emoji symbols, using `tree` to aid lookup.
@@ -14,6 +12,7 @@ function replaceEmoticons(text, boundary = /\s/, padSpaceAfter = false) {
   let active = true;
   let matches = [];
   text = Array.from(text);
+  pad = padSpaceAfter ? ' ' : '';
 
   for (let i = 0; i < text.length; i++) {
     let c = text[i];
@@ -46,11 +45,10 @@ function replaceEmoticons(text, boundary = /\s/, padSpaceAfter = false) {
   }
 
   for(let m of matches.reverse()) {
-    text.splice(m[0], m[1] - m[0], m[2] + (padSpaceAfter ? ' ' : ''));
+    text.splice(m[0], m[1] - m[0], m[2] + pad);
   }
   return text.join('');
 }
-
 
 function buildTree() {
   const tree = {};
@@ -59,7 +57,6 @@ function buildTree() {
   }
   return tree;
 }
-
 
 function mergeTree(s, t, u) {
   t = Array.from(t);
