@@ -4,7 +4,8 @@
   "description": "Replaces emoticon character sequences with UTF-8 emojis",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "prepare": "node build.js"
   },
   "engines": {
     "node": ">=10"
@@ -22,10 +23,8 @@
     "emoticon",
     "emoji"
   ],
-  "dependencies": {
-    "emoticon": "^3.2.0"
-  },
   "devDependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "emoticon": "^3.2.0"
   }
 }
