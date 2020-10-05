@@ -1,6 +1,6 @@
 {
   "name": "emoticon-to-emoji",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Replaces emoticon character sequences with UTF-8 emojis",
   "main": "index.js",
   "scripts": {
