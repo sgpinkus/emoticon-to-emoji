@@ -4,6 +4,7 @@ Trivial script to replace emoticon char sequences with emojis. Uses [emoticon](h
 # Usage
 
 ```
-var { replaceEmoticons } = require('emoticon-to-emoji');
-console.log(replaceEmoticons(']=-Dx-Px-D:);)'));
+> var { replaceEmoticons } = require('emoticon-to-emoji');
+> console.log(replaceEmoticons(']=-Dx-Px-D:);)'));
+😈😝😆😃😉
 ```
